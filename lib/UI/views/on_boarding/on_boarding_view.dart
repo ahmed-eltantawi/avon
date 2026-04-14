@@ -1,5 +1,5 @@
 import 'package:avom/core/utils/styles.dart';
-import 'package:avom/core/widgets/custom_buttom.dart';
+import 'package:avom/core/widgets/custom_small_buttom.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingView extends StatelessWidget {
@@ -18,7 +18,18 @@ class OnBoardingView extends StatelessWidget {
       child: Column(
         mainAxisAlignment: .center,
         children: [
-          Image.asset(image),
+          Align(
+            alignment: .topRight,
+            child: Padding(
+              padding: .all(20),
+              child: Text(
+                "Skip",
+                style: Styles.segoeUI.copyWith(fontWeight: .w500),
+              ),
+            ),
+          ),
+          Spacer(flex: 1),
+          Expanded(flex: 5, child: Image.asset(image)),
           SizedBox(height: 27),
           Text(title, style: Styles.segoeUI),
           SizedBox(height: 10),
@@ -32,7 +43,8 @@ class OnBoardingView extends StatelessWidget {
           ),
           SizedBox(height: 30),
 
-          CustomBottom(),
+          CustomSmallBottom(onTap: () {}),
+          Spacer(flex: 2),
         ],
       ),
     );
