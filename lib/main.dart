@@ -1,4 +1,5 @@
-import 'package:avom/UI/splash_view.dart';
+import 'package:avom/UI/views/splash_view.dart';
+import 'package:avom/core/utils/consts.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,7 +12,7 @@ class Avon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(scaffoldBackgroundColor: Color(0xffD9D9D9)),
+      theme: ThemeData(scaffoldBackgroundColor: kSecondaryColor),
       debugShowCheckedModeBanner: false,
       home: SplashView(),
     );

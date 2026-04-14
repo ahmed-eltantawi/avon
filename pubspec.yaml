@@ -83,7 +83,9 @@ flutter:
 
     - family: Segoe_UI
       fonts:
-        - asset: assets/fonts/Segoe_UI.ttf
+        - asset: assets/fonts/segoeui.ttf
+        - asset: assets/fonts/segoeui_bold.ttf
+          weight: 700
     - family: Montserrat
       fonts:
         - asset: assets/fonts/Montserrat-Regular.ttf
