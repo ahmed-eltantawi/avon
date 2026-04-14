@@ -10,6 +10,10 @@ class Avon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: SplashView());
+    return MaterialApp(
+      theme: ThemeData(scaffoldBackgroundColor: Color(0xffD9D9D9)),
+      debugShowCheckedModeBanner: false,
+      home: SplashView(),
+    );
   }
 }
