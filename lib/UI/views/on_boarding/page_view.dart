@@ -18,6 +18,13 @@ class CustomPageView extends StatefulWidget {
 
 class _CustomPageViewState extends State<CustomPageView> {
   int index = 0;
+  final PageController _pageController = PageController();
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,6 +51,7 @@ class _CustomPageViewState extends State<CustomPageView> {
           Expanded(
             flex: 6,
             child: PageView(
+              controller: _pageController,
               onPageChanged: (value) {
                 index = value;
                 setState(() {});
@@ -85,9 +93,10 @@ class _CustomPageViewState extends State<CustomPageView> {
                 )
               : CustomSmallBottom(
                   onTap: () {
-                    index++;
-                    log(index.toString());
-                    setState(() {});
+                    _pageController.nextPage(
+                      duration: const Duration(milliseconds: 300),
+                      curve: Curves.easeInOut,
+                    );
                   },
                 ),
           Spacer(flex: 2),
