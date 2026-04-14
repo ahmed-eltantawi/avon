@@ -1,5 +1,5 @@
-import 'package:avom/UI/views/on_boarding/on_boarding_view.dart';
 import 'package:avom/UI/views/on_boarding/page_view.dart';
+import 'package:avom/core/logic/methods.dart';
 import 'package:avom/core/utils/app_assets.dart';
 import 'package:avom/core/utils/styles.dart';
 import 'package:flutter/material.dart';
@@ -45,13 +45,6 @@ class SplashView extends StatelessWidget {
 
 void navigationToHomePage(BuildContext context) {
   Future.delayed(const Duration(seconds: 1), () {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) {
-          return CustomPageView();
-        },
-      ),
-    );
+    pushPage(context, CustomPageView());
   });
 }

@@ -18,17 +18,6 @@ class OnBoardingView extends StatelessWidget {
       child: Column(
         mainAxisAlignment: .center,
         children: [
-          Align(
-            alignment: .topRight,
-            child: Padding(
-              padding: .all(20),
-              child: Text(
-                "Skip",
-                style: Styles.segoeUI.copyWith(fontWeight: .w500),
-              ),
-            ),
-          ),
-          Spacer(flex: 1),
           Expanded(flex: 5, child: Image.asset(image)),
           SizedBox(height: 27),
           Text(title, style: Styles.segoeUI),
@@ -41,10 +30,6 @@ class OnBoardingView extends StatelessWidget {
               style: Styles.segoeUI.copyWith(fontWeight: .normal),
             ),
           ),
-          SizedBox(height: 30),
-
-          CustomSmallBottom(onTap: () {}),
-          Spacer(flex: 2),
         ],
       ),
     );
