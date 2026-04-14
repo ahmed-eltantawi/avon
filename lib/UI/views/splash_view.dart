@@ -1,4 +1,4 @@
-import 'package:avom/UI/views/on_boarding/page_view.dart';
+import 'package:avom/UI/views/on_boarding/on_boarding_view.dart';
 import 'package:avom/core/logic/methods.dart';
 import 'package:avom/core/utils/app_assets.dart';
 import 'package:avom/core/utils/styles.dart';
@@ -10,7 +10,7 @@ class SplashView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    navigationToHomePage(context);
+    navigationToOnBoardingPage(context);
     return Scaffold(
       body: Center(
         child: Column(
@@ -43,8 +43,8 @@ class SplashView extends StatelessWidget {
   }
 }
 
-void navigationToHomePage(BuildContext context) {
-  Future.delayed(const Duration(seconds: 1), () {
-    pushPage(context, CustomPageView());
+void navigationToOnBoardingPage(BuildContext context) {
+  Future.delayed(const Duration(seconds: 2), () {
+    pushPage(context, CustomOnBoardingView());
   });
 }
