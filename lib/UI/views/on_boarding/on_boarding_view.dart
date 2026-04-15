@@ -1,7 +1,9 @@
 import 'package:avom/UI/views/auth/pages/login_page.dart';
 import 'package:avom/UI/views/on_boarding/on_boarding_item.dart';
+import 'package:avom/UI/models/on_boarding_model.dart';
 import 'package:avom/core/logic/methods.dart';
 import 'package:avom/core/utils/app_assets.dart';
+import 'package:avom/core/utils/consts.dart';
 import 'package:avom/core/utils/styles.dart';
 import 'package:avom/core/widgets/custom_big_buttom.dart';
 import 'package:avom/core/widgets/custom_small_buttom.dart';
@@ -15,14 +17,33 @@ class CustomOnBoardingView extends StatefulWidget {
 }
 
 class _CustomOnBoardingViewState extends State<CustomOnBoardingView> {
-  int index = 0;
+  int onBoardingIndex = 0;
   final PageController _pageController = PageController();
-
   @override
   void dispose() {
     _pageController.dispose();
     super.dispose();
   }
+
+  final List<OnBoardingModel> onBoardingItems = const [
+    OnBoardingModel(
+      image: Assets.onBoardingOne,
+      title: "WELCOME!",
+      text:
+          "Makeup has the power to transform your mood and empowers you to be a more confident person.",
+    ),
+    OnBoardingModel(
+      image: Assets.onBoardingTwo,
+      title: "SEARCH & PICK",
+      text:
+          "We have dedicated set of products and routines hand picked for every skin type.",
+    ),
+    OnBoardingModel(
+      image: Assets.onBoardingThree,
+      title: "PUSH NOTIFICATIONS ",
+      text: "Allow notifications for new makeup & cosmetics offers.",
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -51,37 +72,21 @@ class _CustomOnBoardingViewState extends State<CustomOnBoardingView> {
             child: PageView(
               controller: _pageController,
               onPageChanged: (value) {
-                index = value;
+                onBoardingIndex = value;
                 setState(() {});
               },
 
-              children: [
-                OnBoardingItem(
-                  image: Assets.onBoardingOne,
-                  title: "WELCOME!",
-                  text:
-                      "Makeup has the power to transform your mood and empowers you to be a more confident person.",
-                ),
-                OnBoardingItem(
-                  image: Assets.onBoardingTwo,
-                  title: "SEARCH & PICK",
-                  text:
-                      "We have dedicated set of products and routines hand picked for every skin type.",
-                ),
-                OnBoardingItem(
-                  image: Assets.onBoardingThree,
-                  title: "PUSH NOTIFICATIONS ",
-                  text:
-                      "Allow notifications for new makeup & cosmetics offers.",
-                ),
-              ],
+              children: List.generate(onBoardingItems.length, (index) {
+                return OnBoardingItem(onBoardingModel: onBoardingItems[index]);
+              }),
             ),
           ),
           SizedBox(height: 30),
-          index == 2
+          onBoardingIndex == 2
               ? Padding(
                   padding: const .symmetric(horizontal: 60),
                   child: CustomBigBottom(
+                    buttonColor: AppColors.primaryColor,
                     text: "Let's Start",
                     onTap: () {
                       pushPage(context, LoginPage());

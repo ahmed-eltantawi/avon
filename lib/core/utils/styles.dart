@@ -8,24 +8,36 @@ abstract class Styles {
     fontSize: 16,
     fontWeight: FontWeight.w600,
     letterSpacing: 4,
-    color: kPrimaryColor,
+    color: AppColors.primaryColor,
   );
   static const TextStyle segoeUI = TextStyle(
     fontFamily: Fonts.SegoeUI,
     fontSize: 16,
     fontWeight: FontWeight.bold,
-    color: kPrimaryColor,
+    color: AppColors.primaryColor,
   );
   static const TextStyle montserratBold = TextStyle(
     fontFamily: Fonts.montserrat,
     fontSize: 16,
     fontWeight: FontWeight.bold,
-    color: kPrimaryColor,
+    color: AppColors.primaryColor,
   );
   static const TextStyle montserratMedium = TextStyle(
     fontFamily: Fonts.montserrat,
     fontSize: 12,
     fontWeight: FontWeight.w500,
-    color: kPrimaryColor,
+    color: AppColors.primaryColor,
+  );
+  static const TextStyle montserratSemiBold = TextStyle(
+    fontFamily: Fonts.montserrat,
+    fontSize: 12,
+    fontWeight: FontWeight.w600,
+    color: AppColors.red,
+  );
+  static const TextStyle montserratRegular = TextStyle(
+    fontFamily: Fonts.montserrat,
+    fontSize: 14,
+    fontWeight: FontWeight.normal,
+    color: AppColors.iceBlue,
   );
 }

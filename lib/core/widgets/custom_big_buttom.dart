@@ -3,8 +3,14 @@ import 'package:avom/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
 class CustomBigBottom extends StatelessWidget {
-  const CustomBigBottom({super.key, required this.onTap, required this.text});
+  const CustomBigBottom({
+    super.key,
+    required this.onTap,
+    required this.text,
+    this.buttonColor = AppColors.red,
+  });
   final VoidCallback onTap;
+  final Color buttonColor;
   final String text;
   @override
   Widget build(BuildContext context) {
@@ -14,13 +20,13 @@ class CustomBigBottom extends StatelessWidget {
         height: 65,
         width: double.infinity,
         decoration: BoxDecoration(
-          color: kPrimaryColor,
+          color: buttonColor,
           borderRadius: BorderRadius.circular(60),
         ),
         child: Center(
           child: Text(
             text,
-            style: Styles.segoeUI.copyWith(color: kSecondaryColor),
+            style: Styles.segoeUI.copyWith(color: AppColors.secondaryColor),
           ),
         ),
       ),

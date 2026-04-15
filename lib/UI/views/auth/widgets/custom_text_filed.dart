@@ -1,0 +1,38 @@
+import 'package:avom/core/utils/consts.dart';
+import 'package:avom/core/utils/styles.dart';
+import 'package:flutter/material.dart';
+
+class CustomTextField extends StatelessWidget {
+  const CustomTextField({
+    super.key,
+    this.label,
+    required this.hint,
+    this.hideText = false,
+  });
+  final String? label;
+  final String hint;
+  final bool hideText;
+  @override
+  Widget build(BuildContext context) {
+    return TextField(
+      obscureText: hideText,
+      decoration: InputDecoration(
+        floatingLabelBehavior: FloatingLabelBehavior.always,
+        labelText: label,
+        labelStyle: Styles.montserratRegular,
+
+        hint: Text(
+          hint,
+          style: Styles.montserratRegular.copyWith(
+            color: AppColors.primaryColor,
+          ),
+        ),
+        focusColor: AppColors.iceBlue,
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide(color: AppColors.iceBlue),
+        ),
+      ),
+    );
+  }
+}

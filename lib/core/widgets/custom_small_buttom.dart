@@ -21,10 +21,10 @@ class CustomSmallBottom extends StatelessWidget {
               offset: Offset(0, 5),
             ),
           ],
-          color: kPrimaryColor,
+          color: AppColors.primaryColor,
           borderRadius: BorderRadius.circular(8),
         ),
-        child: Icon(Icons.arrow_forward_ios, color: kSecondaryColor),
+        child: Icon(Icons.arrow_forward_ios, color: AppColors.secondaryColor),
       ),
     );
   }
