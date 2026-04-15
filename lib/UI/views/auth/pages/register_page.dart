@@ -1,6 +1,8 @@
+import 'package:avom/UI/views/auth/pages/verification_page.dart';
 import 'package:avom/UI/views/auth/widgets/country_picker_code.dart';
 import 'package:avom/UI/views/auth/widgets/custom_text_filed.dart';
 import 'package:avom/UI/views/auth/widgets/password_text_filed.dart';
+import 'package:avom/core/logic/methods.dart';
 import 'package:avom/core/utils/app_assets.dart';
 import 'package:avom/core/utils/consts.dart';
 import 'package:avom/core/utils/styles.dart';
@@ -75,7 +77,19 @@ class RegisterPage extends StatelessWidget {
 
                 SizedBox(
                   width: MediaQuery.sizeOf(context).width * 0.7,
-                  child: CustomBigBottom(onTap: () {}, text: "Next"),
+                  child: CustomBigBottom(
+                    onTap: () {
+                      //TODO: change these with variables
+                      pushPage(
+                        context,
+                        VerificationPage(
+                          email: "email@gamil.com",
+                          userName: "UserName",
+                        ),
+                      );
+                    },
+                    text: "Next",
+                  ),
                 ),
                 Spacer(),
                 Row(
@@ -88,10 +102,15 @@ class RegisterPage extends StatelessWidget {
                         color: AppColors.primaryColor,
                       ),
                     ),
-                    Text("Login", style: Styles.montserratSemiBold),
-                    SizedBox(height: 34),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: Text("Login", style: Styles.montserratSemiBold),
+                    ),
                   ],
                 ),
+                SizedBox(height: 34),
               ],
             ),
           ),
