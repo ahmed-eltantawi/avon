@@ -20,13 +20,15 @@ class CustomTextField extends StatelessWidget {
       textInputAction: textInputAction,
       obscureText: hideText,
       decoration: InputDecoration(
+        contentPadding: EdgeInsets.symmetric(vertical: 12, horizontal: 17),
         floatingLabelBehavior: FloatingLabelBehavior.always,
         labelText: label,
-        labelStyle: Styles.montserratRegular,
+        labelStyle: Styles.montserratRegular.copyWith(fontSize: 18),
 
         hint: Text(
           hint,
           style: Styles.montserratRegular.copyWith(
+            fontSize: 13,
             color: AppColors.primaryColor,
           ),
         ),

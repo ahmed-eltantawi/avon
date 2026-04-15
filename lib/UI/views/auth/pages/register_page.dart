@@ -1,16 +1,15 @@
-import 'package:avom/UI/views/auth/pages/register_page.dart';
 import 'package:avom/UI/views/auth/widgets/country_picker_code.dart';
 import 'package:avom/UI/views/auth/widgets/custom_text_filed.dart';
 import 'package:avom/UI/views/auth/widgets/password_text_filed.dart';
-import 'package:avom/core/logic/methods.dart';
 import 'package:avom/core/utils/app_assets.dart';
 import 'package:avom/core/utils/consts.dart';
 import 'package:avom/core/utils/styles.dart';
 import 'package:avom/core/widgets/custom_big_buttom.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class RegisterPage extends StatelessWidget {
+  const RegisterPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,20 +23,30 @@ class LoginPage extends StatelessWidget {
               children: [
                 SizedBox(height: 102),
 
-                Image.asset(Assets.loginImage),
-                SizedBox(height: 25),
+                SizedBox(
+                  width: MediaQuery.sizeOf(context).width * .25,
+                  child: SvgPicture.asset(Assets.logo),
+                ),
+                SizedBox(height: 40),
 
                 Text(
-                  "Login Now",
+                  "Create Account",
                   style: Styles.montserratBold.copyWith(fontSize: 24),
                 ),
-                SizedBox(height: 14),
 
-                Text(
-                  "Please enter the details below to continue",
-                  style: Styles.montserratRegular,
+                SizedBox(height: 50),
+                CustomTextField(
+                  textInputAction: TextInputAction.next,
+                  label: 'Your Name',
+                  hint: 'Sara Samer',
                 ),
-                SizedBox(height: 41),
+                SizedBox(height: 16),
+                CustomTextField(
+                  textInputAction: TextInputAction.next,
+                  label: 'E-mail',
+                  hint: 'amramer522@gmail.com',
+                ),
+                SizedBox(height: 16),
 
                 Row(
                   children: [
@@ -52,44 +61,34 @@ class LoginPage extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 8),
+                SizedBox(height: 16),
                 PasswordTextField(
-                  hint: "Your Password",
+                  hint: "Create your Password",
                   textInputAction: TextInputAction.done,
                 ),
-                SizedBox(height: 12),
-                Align(
-                  alignment: .centerRight,
-                  child: Text(
-                    "Forget Password?",
-                    style: Styles.montserratMedium.copyWith(
-                      color: AppColors.red,
-                    ),
-                  ),
+                SizedBox(height: 16),
+                PasswordTextField(
+                  hint: "Confirm your password",
+                  textInputAction: TextInputAction.done,
                 ),
-                SizedBox(height: 43),
+                SizedBox(height: 16),
 
                 SizedBox(
                   width: MediaQuery.sizeOf(context).width * 0.7,
-                  child: CustomBigBottom(onTap: () {}, text: "Login"),
+                  child: CustomBigBottom(onTap: () {}, text: "Next"),
                 ),
                 Spacer(),
                 Row(
                   mainAxisAlignment: .center,
                   children: [
                     Text(
-                      "Don't have an account? ",
+                      "Have an account ",
                       style: Styles.montserratRegular.copyWith(
                         fontSize: 12,
                         color: AppColors.primaryColor,
                       ),
                     ),
-                    GestureDetector(
-                      onTap: () {
-                        pushPage(context, RegisterPage());
-                      },
-                      child: Text("Register", style: Styles.montserratSemiBold),
-                    ),
+                    Text("Login", style: Styles.montserratSemiBold),
                     SizedBox(height: 34),
                   ],
                 ),
