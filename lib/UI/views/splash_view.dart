@@ -26,7 +26,10 @@ class SplashView extends StatelessWidget {
             SizedBox(height: 20),
             Text(
               "COSMATICS",
-              style: Styles.inter.copyWith(fontWeight: FontWeight.w700),
+              style: Styles.inter.copyWith(
+                fontWeight: FontWeight.w700,
+                letterSpacing: 4,
+              ),
             ),
             SizedBox(
               width: MediaQuery.sizeOf(context).width * .5,

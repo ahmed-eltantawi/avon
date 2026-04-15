@@ -7,7 +7,7 @@ abstract class Styles {
     fontFamily: Fonts.inter,
     fontSize: 16,
     fontWeight: FontWeight.w600,
-    letterSpacing: 4,
+
     color: AppColors.primaryColor,
   );
   static const TextStyle segoeUI = TextStyle(

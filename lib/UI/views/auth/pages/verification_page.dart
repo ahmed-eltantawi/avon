@@ -150,7 +150,7 @@ class _VerificationPageState extends State<VerificationPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: List.generate(4, (index) {
                     return Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                      padding: const EdgeInsets.symmetric(horizontal: 6.0),
                       child: CustomTextOtp(
                         controller: controllers[index],
                         onChanged: (value) {
@@ -190,8 +190,7 @@ class _VerificationPageState extends State<VerificationPage> {
                   width: MediaQuery.sizeOf(context).width * 0.7,
                   child: CustomBigBottom(
                     onTap: () {
-                      //TODO: Push the new page
-                      // pushPage(context, VerificationPage());
+                      CustomDialog(context);
                     },
                     text: "Done",
                   ),
