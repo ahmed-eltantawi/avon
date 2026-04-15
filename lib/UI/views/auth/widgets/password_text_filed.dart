@@ -3,7 +3,8 @@ import 'package:avom/core/utils/consts.dart';
 import 'package:flutter/material.dart';
 
 class PasswordTextField extends StatefulWidget {
-  const PasswordTextField({super.key});
+  const PasswordTextField({super.key, required this.textInputAction});
+  final TextInputAction textInputAction;
 
   @override
   State<PasswordTextField> createState() => _PasswordTextFieldState();
@@ -11,7 +12,6 @@ class PasswordTextField extends StatefulWidget {
 
 class _PasswordTextFieldState extends State<PasswordTextField> {
   bool passwordHide = true;
-
   IconData passwordIcon = Icons.visibility_off_outlined;
 
   @override
@@ -19,7 +19,11 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
     return Stack(
       alignment: AlignmentGeometry.xy(1, .8),
       children: [
-        CustomTextField(hint: 'Password', hideText: passwordHide),
+        CustomTextField(
+          textInputAction: widget.textInputAction,
+          hint: 'Password',
+          hideText: passwordHide,
+        ),
         IconButton(
           onPressed: changeThePasswordState,
           icon: Icon(passwordIcon, color: AppColors.iceBlue),

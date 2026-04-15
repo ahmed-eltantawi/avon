@@ -43,6 +43,7 @@ class LoginPage extends StatelessWidget {
                     SizedBox(width: 6),
                     Expanded(
                       child: CustomTextField(
+                        textInputAction: TextInputAction.next,
                         label: 'Phone Number',
                         hint: '1022658997',
                       ),
@@ -50,7 +51,7 @@ class LoginPage extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 8),
-                PasswordTextField(),
+                PasswordTextField(textInputAction: TextInputAction.done),
                 SizedBox(height: 12),
                 Align(
                   alignment: .centerRight,

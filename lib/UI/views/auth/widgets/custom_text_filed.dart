@@ -8,13 +8,16 @@ class CustomTextField extends StatelessWidget {
     this.label,
     required this.hint,
     this.hideText = false,
+    required this.textInputAction,
   });
   final String? label;
   final String hint;
   final bool hideText;
+  final TextInputAction textInputAction;
   @override
   Widget build(BuildContext context) {
     return TextField(
+      textInputAction: textInputAction,
       obscureText: hideText,
       decoration: InputDecoration(
         floatingLabelBehavior: FloatingLabelBehavior.always,
