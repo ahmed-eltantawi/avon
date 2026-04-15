@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:avom/UI/views/auth/pages/custom_otp_input_text_filed.dart';
 import 'package:avom/core/logic/methods.dart';
 import 'package:avom/core/utils/app_assets.dart';
-import 'package:avom/core/utils/consts.dart';
+import 'package:avom/core/utils/app_colors.dart';
 import 'package:avom/core/utils/styles.dart';
 import 'package:avom/core/widgets/custom_big_buttom.dart';
 import 'package:email_otp/email_otp.dart';
@@ -78,10 +78,9 @@ class _VerificationPageState extends State<VerificationPage> {
   Future<void> sendOtpCode() async {
     bool result = await EmailOTP.sendOTP(email: widget.email);
     if (!mounted) return;
-
+    _startCooldownTimer();
     if (result) {
       log('The OTP has been sent successfully');
-      _startCooldownTimer();
     } else {
       log('Sending failed, try again');
     }
@@ -178,7 +177,7 @@ class _VerificationPageState extends State<VerificationPage> {
                     Spacer(),
 
                     Text(
-                      "0:36",
+                      "0:${_secondsRemaining.toString().padLeft(2, '0')}",
                       style: Styles.montserratMedium.copyWith(
                         color: AppColors.iceBlue,
                       ),

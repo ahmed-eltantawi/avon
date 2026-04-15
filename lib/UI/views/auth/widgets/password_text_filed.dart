@@ -1,5 +1,5 @@
 import 'package:avom/UI/views/auth/widgets/custom_text_filed.dart';
-import 'package:avom/core/utils/consts.dart';
+import 'package:avom/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class PasswordTextField extends StatefulWidget {

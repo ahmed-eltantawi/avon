@@ -1,5 +1,5 @@
 import 'package:avom/UI/views/splash_view.dart';
-import 'package:avom/core/utils/consts.dart';
+import 'package:avom/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 
 void main() {

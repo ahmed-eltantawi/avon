@@ -1,5 +1,5 @@
 import 'package:avom/core/utils/app_assets.dart';
-import 'package:avom/core/utils/consts.dart';
+import 'package:avom/core/utils/app_colors.dart';
 import 'package:avom/core/utils/styles.dart';
 import 'package:avom/core/widgets/custom_big_buttom.dart';
 import 'package:flutter/material.dart';
