@@ -97,20 +97,17 @@ class _VerificationPageState extends State<VerificationPage> {
             child: Column(
               mainAxisAlignment: .center,
               children: [
-                SizedBox(height: 102),
-
+                SizedBox(height: 94),
                 SizedBox(
-                  width: MediaQuery.sizeOf(context).width * .25,
+                  width: MediaQuery.sizeOf(context).width * .2,
                   child: SvgPicture.asset(Assets.logo),
                 ),
                 SizedBox(height: 40),
-
                 Text(
-                  "Create Account",
+                  "Verify Code",
                   style: Styles.montserratBold.copyWith(fontSize: 24),
                 ),
                 SizedBox(height: 40),
-
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 27),
                   child: Text.rich(

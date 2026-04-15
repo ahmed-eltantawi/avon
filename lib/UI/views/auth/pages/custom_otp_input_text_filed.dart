@@ -46,6 +46,7 @@ class _CustomTextOtpState extends State<CustomTextOtp> {
         controller: widget.controller,
         onChanged: (value) {
           widget.onChanged(value);
+          setState(() {});
 
           if (value.length == 1) {
             FocusScope.of(context).nextFocus();
@@ -53,8 +54,17 @@ class _CustomTextOtpState extends State<CustomTextOtp> {
             FocusScope.of(context).previousFocus();
           }
         },
-        cursorColor: Theme.of(context).colorScheme.inversePrimary,
+        cursorColor: AppColors.iceBlue,
         decoration: InputDecoration(
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: widget.controller.text.isNotEmpty
+                  ? AppColors.red
+                  : AppColors.iceBlue,
+              width: 2,
+            ),
+            borderRadius: BorderRadius.circular(12),
+          ),
           disabledBorder: OutlineInputBorder(
             borderSide: BorderSide(color: AppColors.iceBlue, width: 2),
             borderRadius: BorderRadius.circular(12),

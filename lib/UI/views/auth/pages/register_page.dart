@@ -23,10 +23,10 @@ class RegisterPage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: .center,
               children: [
-                SizedBox(height: 102),
+                SizedBox(height: 94),
 
                 SizedBox(
-                  width: MediaQuery.sizeOf(context).width * .25,
+                  width: MediaQuery.sizeOf(context).width * .20,
                   child: SvgPicture.asset(Assets.logo),
                 ),
                 SizedBox(height: 40),
